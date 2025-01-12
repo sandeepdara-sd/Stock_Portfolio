@@ -1,0 +1,20 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filters select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.filters select[multiple] {
+  height: 100px;
+}
+
+.chart-container {
+  margin: 20px 0;
+}

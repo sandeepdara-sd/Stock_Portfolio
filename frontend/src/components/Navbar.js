@@ -39,6 +39,7 @@ const Navbar = () => {
         setDrawerOpen(open);
     };
 
+    // Define the style before using it
     const listItemStyle = {
         '&:hover': {
             backgroundColor: '#374151',
@@ -60,13 +61,14 @@ const Navbar = () => {
             onClick={toggleDrawer(false)}
             onKeyDown={toggleDrawer(false)}
         >
+            {/* Logo and Title */}
             <Box sx={{ padding: '16px' }}>
                 <Typography variant="h6" sx={{ fontWeight: 'bold', textAlign: 'center', color: '#60a5fa' }}>
                     Stock Portfolio
                 </Typography>
             </Box>
             <Divider sx={{ backgroundColor: '#374151' }} />
-           
+            {/* Navigation Items */}
             <List>
                 <ListItem button component={Link} to="/" onClick={() => setValue(0)} sx={listItemStyle}>
                     <ListItemIcon>
@@ -93,7 +95,9 @@ const Navbar = () => {
         <div>
             <AppBar
                 position="sticky"
-                sx={{backgroundImage:"linear-gradient(90deg, rgba(2,0,36,1) 2%, rgba(166,69,252,1) 36%, rgba(142,8,8,1) 73%, rgba(0,212,255,1) 100%);"}}
+                sx={{
+                    backgroundColor: '#1f2937',
+                }}
             >
                 <Toolbar>
                     <Typography variant="h6" sx={{ flexGrow: 1, color: '#ffffff', fontWeight: 'bold' }}>

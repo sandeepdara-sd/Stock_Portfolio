@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { AppBar, Tab, Tabs, Toolbar, Typography, Box, IconButton, Drawer, List, ListItem, ListItemIcon, ListItemText, Divider } from '@mui/material';
+import { AppBar, Tab, Tabs, Toolbar, Typography, Box, IconButton, Drawer, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import { Link, useLocation } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import DashboardIcon from '@mui/icons-material/Dashboard';
@@ -39,55 +39,45 @@ const Navbar = () => {
         setDrawerOpen(open);
     };
 
-    // Define the style before using it
-    const listItemStyle = {
-        '&:hover': {
-            backgroundColor: '#374151',
-        },
-    };
-
     const drawerContent = (
         <Box
             sx={{
-                width: 280,
+                width: 250,
                 height: '100%',
-                backgroundColor: '#1f2937',
-                color: '#ffffff',
+                background: 'linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)',
+                color: 'white',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'space-between',
+                justifyContent: 'center',
             }}
             role="presentation"
             onClick={toggleDrawer(false)}
             onKeyDown={toggleDrawer(false)}
         >
-            {/* Logo and Title */}
-            <Box sx={{ padding: '16px' }}>
-                <Typography variant="h6" sx={{ fontWeight: 'bold', textAlign: 'center', color: '#60a5fa' }}>
-                    Stock Portfolio
-                </Typography>
-            </Box>
-            <Divider sx={{ backgroundColor: '#374151' }} />
-            {/* Navigation Items */}
+            <Typography
+                variant="h6"
+                sx={{
+                    textAlign: 'center',
+                    marginBottom: 2,
+                    fontWeight: 'bold',
+                }}
+            >
+                Stock_Portfolio
+            </Typography>
             <List>
-                <ListItem button component={Link} to="/" onClick={() => setValue(0)} sx={listItemStyle}>
+                <ListItem button component={Link} to="/" onClick={() => setValue(0)}>
                     <ListItemIcon>
-                        <DashboardIcon sx={{ color: '#9ca3af' }} />
+                        <DashboardIcon sx={{ color: 'white' }} />
                     </ListItemIcon>
-                    <ListItemText primary="Dashboard" primaryTypographyProps={{ style: { color: '#ffffff' } }} />
+                    <ListItemText primary="DashBoard" primaryTypographyProps={{ style: { color: 'white' } }} />
                 </ListItem>
-                <ListItem button component={Link} to="/stock-list" onClick={() => setValue(1)} sx={listItemStyle}>
+                <ListItem button component={Link} to="/stock-list" onClick={() => setValue(1)}>
                     <ListItemIcon>
-                        <ShowChartIcon sx={{ color: '#9ca3af' }} />
+                        <ShowChartIcon sx={{ color: 'white' }} />
                     </ListItemIcon>
-                    <ListItemText primary="Stocks" primaryTypographyProps={{ style: { color: '#ffffff' } }} />
+                    <ListItemText primary="Stocks" primaryTypographyProps={{ style: { color: 'white' } }} />
                 </ListItem>
             </List>
-            <Divider sx={{ backgroundColor: '#374151' }} />
-            {/* Footer */}
-            <Box sx={{ padding: '16px', textAlign: 'center', fontSize: '12px', color: '#9ca3af' }}>
-                © 2025 Stock Portfolio
-            </Box>
         </Box>
     );
 
@@ -96,12 +86,13 @@ const Navbar = () => {
             <AppBar
                 position="sticky"
                 sx={{
-                    backgroundColor: '#1f2937',
+                   
+                    backgroundColor: '#1f2937',        
                 }}
             >
                 <Toolbar>
-                    <Typography variant="h6" sx={{ flexGrow: 1, color: '#ffffff', fontWeight: 'bold' }}>
-                        Stock Portfolio
+                    <Typography variant="h6" sx={{ flexGrow: 1 }}>
+                        <b>Stock_Portfolio</b>
                     </Typography>
                     {isMobile ? (
                         <>
@@ -132,7 +123,7 @@ const Navbar = () => {
                                 indicatorColor="secondary"
                             >
                                 <Tab
-                                    label="Dashboard"
+                                    label="DashBoard"
                                     sx={{ color: 'white' }}
                                     component={Link}
                                     to="/"

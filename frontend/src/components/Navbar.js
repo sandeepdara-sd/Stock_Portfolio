@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { AppBar, Tab, Tabs, Toolbar, Typography, Box, IconButton, Drawer, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { AppBar, Tab, Tabs, Toolbar, Typography, Box, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
 import { Link, useLocation } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import ShowChartIcon from '@mui/icons-material/ShowChart';
 import { useTheme, useMediaQuery } from '@mui/material';
 
 const Navbar = () => {
     const [value, setValue] = useState(0);
     const [drawerOpen, setDrawerOpen] = useState(false);
-    const location = useLocation();
+    const location = useLocation(); // Detect current route
 
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
+    // Synchronize the selected tab with the current route
     useEffect(() => {
         switch (location.pathname) {
             case '/':
@@ -23,7 +22,7 @@ const Navbar = () => {
                 setValue(1);
                 break;
             default:
-                setValue(false);
+                setValue(false); // Handle routes not in Tabs
                 break;
         }
     }, [location]);
@@ -41,41 +40,17 @@ const Navbar = () => {
 
     const drawerContent = (
         <Box
-            sx={{
-                width: 250,
-                height: '100%',
-                background: 'linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)',
-                color: 'white',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-            }}
+            sx={{ width: 250 }}
             role="presentation"
             onClick={toggleDrawer(false)}
             onKeyDown={toggleDrawer(false)}
         >
-            <Typography
-                variant="h6"
-                sx={{
-                    textAlign: 'center',
-                    marginBottom: 2,
-                    fontWeight: 'bold',
-                }}
-            >
-                Stock_Portfolio
-            </Typography>
             <List>
                 <ListItem button component={Link} to="/" onClick={() => setValue(0)}>
-                    <ListItemIcon>
-                        <DashboardIcon sx={{ color: 'white' }} />
-                    </ListItemIcon>
-                    <ListItemText primary="DashBoard" primaryTypographyProps={{ style: { color: 'white' } }} />
+                    <ListItemText primary="DashBoard" />
                 </ListItem>
                 <ListItem button component={Link} to="/stock-list" onClick={() => setValue(1)}>
-                    <ListItemIcon>
-                        <ShowChartIcon sx={{ color: 'white' }} />
-                    </ListItemIcon>
-                    <ListItemText primary="Stocks" primaryTypographyProps={{ style: { color: 'white' } }} />
+                    <ListItemText primary="Stocks" />
                 </ListItem>
             </List>
         </Box>
@@ -86,8 +61,8 @@ const Navbar = () => {
             <AppBar
                 position="sticky"
                 sx={{
-                   
-                    backgroundColor: '#1f2937',        
+                    backgroundImage:
+                        "linear-gradient(90deg, rgba(2,0,36,1) 2%, rgba(166,69,252,1) 36%, rgba(142,8,8,1) 73%, rgba(0,212,255,1) 100%);",
                 }}
             >
                 <Toolbar>

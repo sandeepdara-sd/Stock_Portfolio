@@ -175,6 +175,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## 🙌 Acknowledgements
 
-- [Finhub API](https://www.finhub.io) for stock data.
+- [Finhub API](https://finnhub.io/) for stock data.
 - Open-source libraries and frameworks used in this project.
 

@@ -17,6 +17,10 @@ app.use(e.json())
 app.use("/stock",srouter)
 app.use("/user",router)
 
+app.use("/",(req,res)=>{
+    res.send("Welcome to stock api")
+})
+
 
 mongoose.connect(`${process.env.DB_URL}`)
 .then(()=>{

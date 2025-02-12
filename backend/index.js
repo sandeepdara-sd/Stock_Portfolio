@@ -22,6 +22,7 @@ app.use("/",(req,res)=>{
 })
 
 
+
 mongoose.connect(`${process.env.DB_URL}`)
 .then(()=>{
     app.listen(5000)

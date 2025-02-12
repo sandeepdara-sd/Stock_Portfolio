@@ -21,6 +21,7 @@ app.use("/",(req,res)=>{
     res.send("Welcome to stock api")
 })
 
+
 mongoose.connect(`${process.env.DB_URL}`)
 .then(()=>{
     app.listen(5000)

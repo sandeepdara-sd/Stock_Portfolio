@@ -10,7 +10,6 @@ dotenv.config();
 
 const app = e()
 
-
 app.use(cors())
 app.use(cookieParser())
 app.use(e.json())

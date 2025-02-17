@@ -7,6 +7,7 @@ import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser'
 
 dotenv.config();
+
 const app = e()
 
 

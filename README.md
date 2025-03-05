@@ -108,17 +108,6 @@ npm start
 | **GET** | `/api/portfolio/:userId` | Get User's Portfolio |
 
 ---
-## 📷 Screenshots
-#### 🏠 **Dashboard Page**
-![Dashboard](https://via.placeholder.com/800x400)
-
-#### 📈 **Stock Details Page**
-![Stock Details](https://via.placeholder.com/800x400)
-
-#### 🔑 **User Authentication**
-![Login Page](https://via.placeholder.com/800x400)
-
----
 ## 💡 Future Enhancements
 - 🤖 Implement AI-based Stock Predictions
 - 📊 Add Advanced Charting Tools
